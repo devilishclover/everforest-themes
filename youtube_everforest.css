@@ -1,0 +1,416 @@
+/* Everforest Theme for YouTube */
+
+:root {
+  /* Everforest Palette */
+  --ef-foreground: #D3C6AA;
+  --ef-red: #E67E80;
+  --ef-orange: #E69875;
+  --ef-yellow: #DBBC7F;
+  --ef-green: #A7C080;
+  --ef-blue: #7FBBB3;
+  --ef-aqua: #83C092;
+  --ef-purple: #D699B6;
+  
+  --ef-bg-dim: #1E2326;
+  --ef-bg-0: #272E33;
+  --ef-bg-1: #2E383C;
+  --ef-bg-2: #374145;
+  --ef-bg-3: #414B50;
+  --ef-bg-4: #495156;
+  --ef-bg-5: #4F5B58;
+  
+  --ef-gray-0: #7A8478;
+  --ef-gray-1: #859289;
+  --ef-gray-2: #9DA9A0;
+}
+
+html[dark], [dark] {
+  /* Backgrounds */
+  --yt-spec-base-background: var(--ef-bg-dim) !important;
+  --yt-spec-raised-background: var(--ef-bg-0) !important;
+  --yt-spec-menu-background: var(--ef-bg-1) !important;
+  --yt-spec-inverted-background: var(--ef-foreground) !important;
+  --yt-spec-additive-background: var(--ef-bg-1) !important;
+  
+  /* Text */
+  --yt-spec-text-primary: var(--ef-foreground) !important;
+  --yt-spec-text-secondary: var(--ef-gray-2) !important;
+  --yt-spec-text-disabled: var(--ef-gray-0) !important;
+  --yt-spec-text-primary-inverse: var(--ef-bg-dim) !important;
+  
+  /* Icons */
+  --yt-spec-icon-active-other: var(--ef-foreground) !important;
+  --yt-spec-icon-inactive: var(--ef-gray-0) !important;
+  --yt-spec-icon-disabled: var(--ef-bg-4) !important;
+  --yt-spec-brand-icon-active: var(--ef-green) !important;
+  --yt-spec-brand-icon-inactive: var(--ef-gray-1) !important;
+  
+  /* Buttons & Interactive */
+  --yt-spec-brand-button-background: var(--ef-red) !important;
+  --yt-spec-brand-link-text: var(--ef-blue) !important;
+  --yt-spec-call-to-action: var(--ef-blue) !important;
+  --yt-spec-badge-chip-background: var(--ef-bg-2) !important;
+  --yt-spec-verified-badge-background: var(--ef-gray-1) !important;
+  
+  /* General */
+  --yt-spec-general-background-a: var(--ef-bg-0) !important;
+  --yt-spec-general-background-b: var(--ef-bg-1) !important;
+  --yt-spec-general-background-c: var(--ef-bg-dim) !important;
+  --yt-spec-error-background: var(--ef-bg-dim) !important;
+  
+  /* Borders & Dividers */
+  --yt-spec-10-percent-layer: var(--ef-bg-2) !important;
+  --yt-spec-outline: var(--ef-bg-2) !important;
+  --yt-spec-touch-response: var(--ef-bg-3) !important;
+  
+  /* Search */
+  --ytd-searchbox-background: var(--ef-bg-0) !important;
+  --ytd-searchbox-text-color: var(--ef-foreground) !important;
+}
+
+/* Specific Overrides */
+ytd-masthead {
+    background-color: var(--ef-bg-0) !important;
+}
+
+#guide-content.ytd-app {
+    background-color: var(--ef-bg-0) !important;
+}
+
+ytd-mini-guide-renderer.ytd-app {
+    background-color: var(--ef-bg-0) !important;
+}
+
+/* Progress Bar */
+.ytp-play-progress {
+    background: var(--ef-red) !important;
+}
+
+.ytp-swatch-background-color {
+    background-color: var(--ef-red) !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--ef-bg-dim);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--ef-bg-3);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--ef-bg-4);
+}
+
+/* Remove Gradients (as requested) */
+.ytp-gradient-top, 
+.ytp-gradient-bottom {
+    display: none !important;
+    background-image: none !important;
+}
+
+
+/* Genre Bar Container (Background behind chips) */
+ytd-feed-filter-chip-bar-renderer,
+#chips-wrapper.ytd-feed-filter-chip-bar-renderer,
+#scroll-container.ytd-feed-filter-chip-bar-renderer {
+    background-color: var(--ef-bg-0) !important; /* Match masthead */
+    background: var(--ef-bg-0) !important;
+}
+
+/* Left/Right Arrows on Chip Bar */
+#left-arrow.ytd-feed-filter-chip-bar-renderer,
+#right-arrow.ytd-feed-filter-chip-bar-renderer {
+    background-color: var(--ef-bg-0) !important;
+}
+
+#left-arrow-button.ytd-feed-filter-chip-bar-renderer,
+#right-arrow-button.ytd-feed-filter-chip-bar-renderer {
+    background-color: var(--ef-bg-1) !important;
+}
+
+/* The Chips Themselves */
+yt-chip-cloud-chip-renderer {
+    background-color: var(--ef-bg-1) !important;
+    color: var(--ef-foreground) !important;
+    border: 1px solid var(--ef-bg-2) !important;
+    border-radius: 8px !important; /* Fix square corners */
+}
+
+yt-chip-cloud-chip-renderer:hover {
+    background-color: var(--ef-bg-2) !important;
+}
+
+yt-chip-cloud-chip-renderer[selected] {
+    background-color: var(--ef-green) !important; /* Use Green Accent */
+    color: var(--ef-bg-dim) !important;
+}
+
+yt-chip-cloud-chip-renderer[selected]:hover {
+    background-color: var(--ef-green) !important;
+}
+
+/* Chip Text */
+yt-chip-cloud-chip-renderer yt-formatted-string {
+    color: inherit !important;
+}
+
+/* ========================================= */
+/* Video Page & Actions (Added)              */
+/* ========================================= */
+
+/* 1. Area Around Video (Columns/Background) */
+#columns, #primary, #secondary {
+    background-color: var(--ef-bg-dim) !important;
+}
+
+/* 2. Subscribe Button */
+/* Default (Unsubscribed) - Red/Accent */
+ytd-subscribe-button-renderer yt-button-shape button.yt-spec-button-shape-next--filled {
+    background-color: var(--ef-red) !important;
+    color: var(--ef-bg-dim) !important;
+}
+
+/* Hover */
+ytd-subscribe-button-renderer yt-button-shape button.yt-spec-button-shape-next--filled:hover {
+    background-color: var(--ef-orange) !important;
+}
+
+/* Subscribed (Tonal/Gray) */
+ytd-subscribe-button-renderer yt-button-shape button.yt-spec-button-shape-next--tonal,
+ytd-subscribe-button-renderer yt-button-shape button.yt-spec-button-shape-next--outline {
+    background-color: var(--ef-bg-2) !important;
+    color: var(--ef-foreground) !important;
+    border: 1px solid var(--ef-bg-3) !important;
+}
+
+/* 3. Like/Dislike & Action Buttons (Pill Shape) */
+/* The container for the segmented like/dislike */
+ytd-segmented-like-dislike-button-renderer yt-button-shape {
+    background-color: var(--ef-bg-1) !important;
+    border: 1px solid var(--ef-bg-2) !important;
+}
+
+/* Individual buttons inside the segment */
+ytd-segmented-like-dislike-button-renderer yt-button-shape button {
+    color: var(--ef-foreground) !important;
+}
+
+ytd-segmented-like-dislike-button-renderer yt-button-shape button:hover {
+    background-color: var(--ef-bg-2) !important;
+}
+
+/* Other buttons (Share, Download, Clip, etc.) */
+ytd-menu-renderer ytd-button-renderer yt-button-shape button.yt-spec-button-shape-next--tonal {
+    background-color: var(--ef-bg-1) !important;
+    color: var(--ef-foreground) !important;
+    border: 1px solid var(--ef-bg-2) !important;
+}
+
+ytd-menu-renderer ytd-button-renderer yt-button-shape button.yt-spec-button-shape-next--tonal:hover {
+    background-color: var(--ef-bg-2) !important;
+}
+
+/* 4. Description Box */
+#description.ytd-watch-metadata {
+    background-color: var(--ef-bg-1) !important;
+    border: 1px solid var(--ef-bg-2) !important;
+}
+
+#description.ytd-watch-metadata:hover {
+    background-color: var(--ef-bg-2) !important;
+}
+
+/* 5. Comment Section Input */
+#simple-box.ytd-comments-header-renderer {
+    background-color: transparent !important;
+}
+
+ytd-comment-simplebox-renderer {
+    background-color: transparent !important;
+}
+
+#placeholder-area.ytd-comment-simplebox-renderer {
+    border-bottom: 1px solid var(--ef-bg-3) !important;
+}
+
+/* Disable Ambient Mode (Cinematics) */
+#cinematics {
+    display: none !important;
+}
+
+/* ========================================= */
+/* Search Bar Fixes                          */
+/* ========================================= */
+
+/* 1. The Search Box Container (Input Area) */
+ytd-searchbox #container.ytd-searchbox {
+    background-color: var(--ef-bg-0) !important;
+    border: 1px solid var(--ef-bg-2) !important;
+    box-shadow: none !important;
+    color: var(--ef-foreground) !important;
+    border-radius: 40px 0 0 40px !important;
+    margin-left: 0 !important;
+}
+
+/* 2. The Search Button (Magnifying Glass) */
+ytd-searchbox #search-icon-legacy.ytd-searchbox {
+    background-color: var(--ef-bg-1) !important;
+    border: 1px solid var(--ef-bg-2) !important;
+    border-left: none !important;
+    border-radius: 0 40px 40px 0 !important;
+    color: var(--ef-gray-2) !important;
+}
+
+ytd-searchbox #search-icon-legacy.ytd-searchbox:hover {
+    background-color: var(--ef-bg-2) !important;
+    color: var(--ef-foreground) !important;
+}
+
+ytd-searchbox #search-icon-legacy.ytd-searchbox yt-icon {
+    color: inherit !important;
+}
+
+/* 3. The Input Field Itself */
+ytd-searchbox input#search {
+    color: var(--ef-foreground) !important;
+}
+
+/* Placeholder Text */
+ytd-searchbox input#search::placeholder {
+    color: var(--ef-gray-0) !important;
+}
+
+/* 4. Voice Search Button (Circle next to search) */
+ytd-masthead #voice-search-button.ytd-masthead {
+    background-color: var(--ef-bg-1) !important;
+    margin-left: 10px !important;
+}
+
+ytd-masthead #voice-search-button.ytd-masthead:hover {
+    background-color: var(--ef-bg-2) !important;
+}
+
+/* Remove any weird shadows or inner borders */
+ytd-searchbox {
+    --ytd-searchbox-background: transparent !important;
+    --ytd-searchbox-legacy-border-color: transparent !important;
+    --ytd-searchbox-legacy-border-shadow-color: transparent !important;
+}
+
+/* ========================================= */
+/* Zen / Improvements (Ported)               */
+/* ========================================= */
+
+/* Global Scrollbar & Font Tweaks */
+* {
+    scrollbar-color: var(--ef-bg-5) transparent !important;
+    scrollbar-width: thin !important;
+}
+
+/* Thumbnails: Dimmed until hover (Zen Mode) */
+.yt-simple-endpoint.ytd-playlist-thumbnail,
+ytd-thumbnail #thumbnail.ytd-thumbnail,
+ytmusic-thumbnail-renderer {
+    filter: brightness(.8) grayscale(.8);
+    background-color: var(--ef-bg-0) !important;
+    transition: filter 0.2s ease;
+}
+
+.yt-simple-endpoint.ytd-playlist-thumbnail:hover,
+ytd-thumbnail #thumbnail.ytd-thumbnail:hover,
+ytmusic-thumbnail-renderer:hover {
+    filter: none;
+}
+
+/* Progress Bar Gradient */
+#progress.yt-page-navigation-progress {
+    background: linear-gradient(to right, var(--ef-green) 80%, var(--ef-bg-5) 100%) !important;
+}
+
+/* Video Metadata / Description Box Improvements */
+.ytVideoMetadataCarouselViewModelHost,
+#description.ytd-watch-metadata {
+    background: var(--ef-bg-1) !important;
+}
+
+#description.ytd-watch-metadata span,
+#description.ytd-watch-metadata ytd-text-inline-expander,
+#description.ytd-watch-metadata h3,
+#description.ytd-watch-metadata h2 {
+    color: var(--ef-gray-2) !important;
+    font-weight: normal !important;
+}
+
+/* Links in description */
+#description.ytd-watch-metadata a {
+    color: var(--ef-green) !important;
+}
+
+/* Social Links / Share Buttons */
+#social-links img {
+    filter: grayscale(.7) invert(.25) brightness(.8);
+}
+
+#social-links .yt-spec-button-shape-next--outline:hover {
+    border: 1px solid var(--ef-bg-4) !important;
+    background: var(--ef-bg-4) !important;
+}
+
+#social-links .yt-spec-button-shape-next--outline:hover img {
+    filter: unset;
+}
+
+/* Like/Dislike Button Text */
+ytd-segmented-like-dislike-button-renderer button {
+    color: var(--ef-gray-2) !important;
+}
+
+ytd-segmented-like-dislike-button-renderer button:hover {
+    color: var(--ef-green) !important;
+}
+
+/* Channel Name */
+.ytd-channel-name a {
+    color: var(--ef-green) !important;
+    font-weight: normal !important;
+}
+
+/* Owner Sub Count */
+.owner-sub-count {
+    color: var(--ef-gray-1) !important;
+}
+
+/* Hide YouTube Logo (Zen) */
+.ytd-topbar-logo-renderer {
+    display: none !important;
+}
+
+/* Guide / Sidebar Cleanup */
+.ytd-guide-renderer {
+    background-color: var(--ef-bg-1) !important;
+}
+
+/* Hide icons in guide for cleaner look */
+.ytd-guide-renderer tp-yt-paper-item .guide-icon.ytd-guide-entry-renderer,
+.ytd-guide-renderer #content-icon.ytd-compact-link-renderer {
+    display: none !important;
+}
+
+/* Volume Slider */
+.ytp-volume-slider-handle {
+    background: var(--ef-green) !important;
+}
+
+.ytp-volume-slider-handle:before {
+    background: var(--ef-green) !important;
+}
+
+/* Live Badges */
+.badge-shape-wiz--live.badge-shape-wiz--overlay {
+    color: var(--ef-bg-0) !important;
+    background-color: var(--ef-orange) !important;
+}

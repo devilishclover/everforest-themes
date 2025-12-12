@@ -1,0 +1,307 @@
+/* Everforest Theme for GitHub */
+
+:root {
+  /* Everforest Palette */
+  --ef-foreground: #D3C6AA;
+  --ef-red: #E67E80;
+  --ef-orange: #E69875;
+  --ef-yellow: #DBBC7F;
+  --ef-green: #A7C080;
+  --ef-blue: #7FBBB3;
+  --ef-aqua: #83C092;
+  --ef-purple: #D699B6;
+  
+  --ef-bg-dim: #1E2326;
+  --ef-bg-0: #272E33;
+  --ef-bg-1: #2E383C;
+  --ef-bg-2: #374145;
+  --ef-bg-3: #414B50;
+  --ef-bg-4: #495156;
+  --ef-bg-5: #4F5B58;
+  
+  --ef-bg-red: #4C3743;
+  --ef-bg-visual: #493B40;
+  --ef-bg-yellow: #45443C;
+  --ef-bg-green: #3C4841;
+  --ef-bg-blue: #384B55;
+
+  --ef-gray-0: #7A8478;
+  --ef-gray-1: #859289;
+  --ef-gray-2: #9DA9A0;
+}
+
+[data-color-mode="dark"][data-dark-theme="dark"],
+[data-color-mode="dark"][data-dark-theme="dark"] ::backdrop,
+[data-color-mode="auto"][data-light-theme="dark"],
+[data-color-mode="auto"][data-light-theme="dark"] ::backdrop {
+  
+  /* Base Colors */
+  --bgColor-default: var(--ef-bg-dim);
+  --bgColor-muted: var(--ef-bg-0);
+  --bgColor-inset: var(--ef-bg-1);
+  --bgColor-emphasis: var(--ef-gray-1);
+  --bgColor-disabled: var(--ef-bg-2);
+  --bgColor-transparent: #00000000;
+  
+  --fgColor-default: var(--ef-foreground);
+  --fgColor-muted: var(--ef-gray-2);
+  --fgColor-accent: var(--ef-blue);
+  --fgColor-disabled: var(--ef-gray-0); /* Inferred */
+  
+  --borderColor-default: var(--ef-bg-2);
+  --borderColor-muted: var(--ef-bg-1);
+  --borderColor-emphasis: var(--ef-gray-0);
+  --borderColor-disabled: var(--ef-bg-1);
+  --borderColor-transparent: #00000000;
+
+  /* Accents & States */
+  --bgColor-accent-emphasis: var(--ef-green);
+  --bgColor-accent-muted: var(--ef-bg-blue); /* Using bg-blue for muted accent */
+  --borderColor-accent-emphasis: var(--ef-green);
+  --borderColor-accent-muted: var(--ef-bg-blue);
+  
+  --bgColor-attention-emphasis: var(--ef-yellow);
+  --bgColor-attention-muted: var(--ef-bg-yellow);
+  --borderColor-attention-emphasis: var(--ef-yellow);
+  --borderColor-attention-muted: var(--ef-bg-yellow);
+  
+  --bgColor-danger-emphasis: var(--ef-red);
+  --bgColor-danger-muted: var(--ef-bg-red);
+  --borderColor-danger-emphasis: var(--ef-red);
+  --borderColor-danger-muted: var(--ef-bg-red);
+  
+  --bgColor-success-emphasis: var(--ef-green);
+  --bgColor-success-muted: var(--ef-bg-green);
+  --borderColor-success-emphasis: var(--ef-green);
+  --borderColor-success-muted: var(--ef-bg-green);
+  
+  --bgColor-done-emphasis: var(--ef-purple);
+  --bgColor-done-muted: var(--ef-bg-visual); /* Using visual for done/purple muted */
+  --borderColor-done-emphasis: var(--ef-purple);
+  --borderColor-done-muted: var(--ef-bg-visual);
+  
+  --bgColor-severe-emphasis: var(--ef-orange);
+  --bgColor-severe-muted: var(--ef-bg-yellow); /* Fallback to yellow bg */
+  --borderColor-severe-emphasis: var(--ef-orange);
+  --borderColor-severe-muted: var(--ef-bg-yellow);
+  
+  --bgColor-sponsors-emphasis: var(--ef-purple);
+  --bgColor-sponsors-muted: var(--ef-bg-visual);
+  --borderColor-sponsors-emphasis: var(--ef-purple);
+  --borderColor-sponsors-muted: var(--ef-bg-visual);
+
+  /* Buttons */
+  --button-primary-bgColor-rest: var(--ef-green);
+  --button-primary-bgColor-active: var(--ef-green); /* Maybe darker? */
+  --button-primary-bgColor-disabled: var(--ef-bg-3);
+  --button-primary-bgColor-hover: var(--ef-aqua);
+  --button-primary-fgColor-rest: var(--ef-bg-dim);
+  --button-primary-fgColor-disabled: var(--ef-bg-4);
+  --button-primary-borderColor-rest: var(--ef-green);
+  --button-primary-borderColor-active: var(--ef-green);
+  --button-primary-borderColor-disabled: var(--ef-bg-3);
+  --button-primary-borderColor-hover: var(--ef-aqua);
+  
+  --button-default-bgColor-rest: var(--ef-bg-1);
+  --button-default-bgColor-active: var(--ef-bg-2);
+  --button-default-bgColor-hover: var(--ef-bg-2);
+  --button-default-fgColor-rest: var(--ef-foreground);
+  --button-default-borderColor-rest: var(--ef-bg-2);
+  --button-default-borderColor-active: var(--ef-bg-3);
+  --button-default-borderColor-hover: var(--ef-bg-3);
+  
+  --button-danger-fgColor-rest: var(--ef-red);
+  --button-danger-bgColor-hover: var(--ef-bg-red);
+  --button-danger-iconColor-rest: var(--ef-red);
+
+  --button-inactive-bgColor: var(--ef-bg-1);
+  --button-inactive-fgColor: var(--ef-gray-0);
+  
+  --button-outline-bgColor-rest: var(--ef-bg-0);
+  --button-outline-bgColor-active: var(--ef-bg-1);
+  --button-outline-fgColor-rest: var(--ef-blue);
+  --button-outline-fgColor-hover: var(--ef-blue);
+  --button-outline-fgColor-disabled: var(--ef-gray-0);
+
+  /* Syntax Highlighting (PrettyLights) */
+  --color-prettylights-syntax-comment: var(--ef-gray-1);
+  --color-prettylights-syntax-constant: var(--ef-purple);
+  --color-prettylights-syntax-entity: var(--ef-purple);
+  --color-prettylights-syntax-storage-modifier-import: var(--ef-foreground);
+  --color-prettylights-syntax-entity-tag: var(--ef-green);
+  --color-prettylights-syntax-keyword: var(--ef-red);
+  --color-prettylights-syntax-string: var(--ef-green);
+  --color-prettylights-syntax-variable: var(--ef-foreground);
+  --color-prettylights-syntax-brackethighlighter-angle: var(--ef-gray-2);
+  --color-prettylights-syntax-brackethighlighter-unmatched: var(--ef-red);
+  --color-prettylights-syntax-invalid-illegal-text: var(--ef-foreground);
+  --color-prettylights-syntax-invalid-illegal-bg: var(--ef-red);
+  --color-prettylights-syntax-carriage-return-text: var(--ef-foreground);
+  --color-prettylights-syntax-carriage-return-bg: var(--ef-red);
+  --color-prettylights-syntax-string-regexp: var(--ef-green);
+  --color-prettylights-syntax-markup-list: var(--ef-yellow);
+  --color-prettylights-syntax-markup-heading: var(--ef-blue);
+  --color-prettylights-syntax-markup-italic: var(--ef-foreground);
+  --color-prettylights-syntax-markup-bold: var(--ef-foreground);
+  --color-prettylights-syntax-markup-deleted-text: var(--ef-red);
+  --color-prettylights-syntax-markup-deleted-bg: var(--ef-bg-red);
+  --color-prettylights-syntax-markup-inserted-text: var(--ef-green);
+  --color-prettylights-syntax-markup-inserted-bg: var(--ef-bg-green);
+  --color-prettylights-syntax-markup-changed-text: var(--ef-orange);
+  --color-prettylights-syntax-markup-changed-bg: var(--ef-bg-yellow);
+  --color-prettylights-syntax-markup-ignored-text: var(--ef-gray-1);
+  --color-prettylights-syntax-markup-ignored-bg: var(--ef-bg-blue);
+  --color-prettylights-syntax-meta-diff-range: var(--ef-purple);
+  --color-prettylights-syntax-sublimelinter-gutter-mark: var(--ef-gray-0);
+  --color-prettylights-syntax-constant-other-reference-link: var(--ef-blue);
+
+  /* CodeMirror */
+  --codeMirror-syntax-fgColor-comment: var(--ef-gray-1);
+  --codeMirror-syntax-fgColor-constant: var(--ef-purple);
+  --codeMirror-syntax-fgColor-entity: var(--ef-purple);
+  --codeMirror-syntax-fgColor-keyword: var(--ef-red);
+  --codeMirror-syntax-fgColor-storage: var(--ef-red);
+  --codeMirror-syntax-fgColor-string: var(--ef-green);
+  --codeMirror-syntax-fgColor-support: var(--ef-blue);
+  --codeMirror-syntax-fgColor-variable: var(--ef-foreground);
+
+  /* ANSI Colors */
+  --color-ansi-black: var(--ef-bg-1);
+  --color-ansi-black-bright: var(--ef-gray-0);
+  --color-ansi-white: var(--ef-foreground);
+  --color-ansi-gray: var(--ef-gray-1);
+  --color-ansi-red: var(--ef-red);
+  --color-ansi-red-bright: var(--ef-red);
+  --color-ansi-green: var(--ef-green);
+  --color-ansi-green-bright: var(--ef-green);
+  --color-ansi-yellow: var(--ef-yellow);
+  --color-ansi-yellow-bright: var(--ef-yellow);
+  --color-ansi-blue: var(--ef-blue);
+  --color-ansi-blue-bright: var(--ef-blue);
+  --color-ansi-magenta: var(--ef-purple);
+  --color-ansi-magenta-bright: var(--ef-purple);
+  --color-ansi-cyan: var(--ef-aqua);
+  --color-ansi-cyan-bright: var(--ef-aqua);
+
+  /* Contributions Calendar */
+  --contribution-default-bgColor-0: var(--ef-bg-1);
+  --contribution-default-bgColor-1: var(--ef-bg-green); /* Level 1 */
+  --contribution-default-bgColor-2: var(--ef-green); /* Level 2 */
+  --contribution-default-bgColor-3: var(--ef-aqua); /* Level 3 */
+  --contribution-default-bgColor-4: var(--ef-blue); /* Level 4 */
+  --contribution-default-borderColor-0: var(--ef-bg-0);
+
+  /* Other */
+  --avatar-shadow: 0px 0px 0px 2px var(--ef-bg-dim);
+  --avatarStack-fade-bgColor-default: var(--ef-bg-2);
+  --avatarStack-fade-bgColor-muted: var(--ef-bg-1);
+  
+  --control-checked-bgColor-active: var(--ef-blue);
+  --control-checked-bgColor-hover: var(--ef-blue);
+}
+
+/* Specific Overrides based on Userstyle */
+
+/* Forced Foreground Colors */
+p, body, body.color-text-primary, span.color-text-primary, span.css-truncate-target, span.d-none, summary.btn, span.text-bold, .Link--primary, a.Header-link, a.markdown-title, span.ml-1, a.btn, a.btn-primary, a, span, .Link--muted, button.btn-sm, svg, svg.octicon, a.ml-1, a.color-text-primary, a.btn-mktg, div.application-main, h4.color-text-primary, .ajax-pagination-form, .ajax-pagination-btn, button.js-profile-editable-edit-button, kbd, button.btn-link, button.dropdown-item, summary.f6, button.btn-primary, summary.HeaderMenu-summary, h1 {
+    color: var(--ef-foreground) !important;
+}
+
+/* Forced Background Colors */
+div.col-md-8, input.form-control, a.btn, button.btn, input.btn, div.p-3, div.Popover-Message, .Popover-Message.Box, .Popover, div.Popover.color-shadow-large, div.js-hovercard-content,
+div.Popover-message--large, div.content-absolute, d, main, a.social-count, div.copyable-terminal {
+    background-color: var(--ef-bg-dim) !important;
+    border-color: var(--ef-bg-dim) !important;
+    color: var(--ef-foreground) !important;
+}
+
+input, th, td, div.js-pinned-items-reorder-container, pre, body, kbd, li.Box-row, .TimelineItem--condensed, .Link--muted {
+    background-color: var(--ef-bg-dim) !important;
+    color: var(--ef-foreground) !important;
+}
+
+.Footer, div.MarketplaceBackground-buffer, .Box {
+    background-color: var(--ef-bg-dim) !important;
+    border-color: var(--ef-bg-2) !important;
+}
+
+div.dashboard-sidebar, div.Box, label.input-sm, form.Box, .hx_page-header-bg, summary.btn, img {
+    background-color: var(--ef-bg-0) !important;
+}
+
+.color-bg-secondary, li.notifications-list-item.notification-read, .subnav-search-input, div.graph-before-activity-overview, .Box-body, span.color-bg-canvas, button.contribution-activity-show-more, img, textarea, #user_profile_name, #user_profile_email, #user_profile_blog, #user_profile_twitter_username, #user_profile_company, #user_profile_location, button.btn-danger, div.auth-form-body {
+    background-color: var(--ef-bg-0) !important;
+    color: var(--ef-foreground) !important;
+}
+
+/* Header */
+.Header, header.Header-old {
+    background-color: var(--ef-bg-1) !important;
+    border-bottom: 1px solid var(--ef-bg-2) !important;
+}
+
+/* Navigation */
+.UnderlineNav-item.selected, .UnderlineNav-item[role=tab][aria-selected=true], .UnderlineNav-item[aria-current]:not([aria-current=false]) {
+    border-radius: 5px !important;
+    border-bottom-color: var(--ef-foreground) !important;
+}
+
+.subnav-item.selected, .subnav-item[aria-selected=true], .subnav-item[aria-current]:not([aria-current=false]), .navigation-item[aria-selected=true], div.jump-to-suggestions {
+    background-color: var(--ef-bg-1) !important;
+    border-color: var(--ef-foreground) !important;
+    color: var(--ef-foreground) !important;
+}
+
+/* Timeline & Boxes */
+div.TimelineItem-badge, span.menu-heading, a.menu-item, a.tooltipped-sw, input.btn-block {
+    background-color: var(--ef-bg-0) !important;
+    border-color: var(--ef-bg-2) !important;
+}
+
+li.Box-row, .TimelineItem--condensed, .Box {
+    border-color: var(--ef-bg-2) !important;
+}
+
+.TimelineItem::before {
+    background-color: var(--ef-bg-0) !important;
+}
+
+.Box-row--focus-gray.navigation-focus, div.Box-header, .color-bg-primary, div.application-main, .user-status-circle-badge, a.tabnav-tab, details-menu, li.notifications-list-item.notification-unread, div.AvatarStack-body, .color-bg-tertiary, details-menu.Select-Menu, div.SelectMenu-modal, #filter-menu-3ab464, a.SelectMenu-item, div.Box-row {
+    background-color: var(--ef-bg-1) !important;
+    color: var(--ef-foreground) !important;
+}
+
+/* Links & Buttons */
+a.btn-primary:hover, summary.btn:hover, a.subnav-item, button.btn-primary, .form-control:focus {
+    background-color: var(--ef-bg-0) !important;
+    border-color: var(--ef-foreground) !important;
+    color: var(--ef-foreground) !important;
+}
+
+.Link--primary:hover, .Link--secondary:hover, a.Link--muted:hover, span.ws-normal:hover {
+    color: var(--ef-green) !important;
+}
+
+/* Misc Fixes */
+.topic-tag, div.color-bg-info, .Counter, span.Labelm, summary.verified {
+    background-color: var(--ef-bg-2) !important;
+    color: var(--ef-foreground) !important;
+}
+
+summary.verified {
+    color: var(--ef-green) !important;
+}
+
+/* Fix for text visibility on inputs */
+input.form-control, textarea.form-control {
+    color: var(--ef-foreground) !important;
+    background-color: var(--ef-bg-dim) !important;
+    border: 1px solid var(--ef-bg-2) !important;
+}
+
+/* Fix for dropdowns */
+details-menu.dropdown-menu, .dropdown-menu {
+    background-color: var(--ef-bg-1) !important;
+    border-color: var(--ef-bg-2) !important;
+}
+
